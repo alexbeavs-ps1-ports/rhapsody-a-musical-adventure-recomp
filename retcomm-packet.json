@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "rhapsody-a-musical-adventure-psx",
+  "name": "Rhapsody - A Musical Adventure",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "rhapsody-a-musical-adventure-recomp",
+  "rom_identity": {
+    "crc32": [
+      "17f052bd"
+    ],
+    "md5": [
+      "ddfbcf4b9006d09dc0413e1c3a2356eb"
+    ],
+    "sha1": [
+      "41fd8e464ca518e45b2cf5daecb6d4a3f7a77200"
+    ],
+    "disc_serials": [
+      "SLUS-01073"
+    ],
+    "sizes": [
+      404534592
+    ],
+    "filenames": [
+      "Rhapsody - A Musical Adventure (USA).cue",
+      "Rhapsody - A Musical Adventure (USA) (Track 1).bin"
+    ],
+    "track_counts": [
+      2
+    ],
+    "disc_fps": [
+      "4c55cab7f710c285fd1030047684d33e607467886db7b042a93ad8efefc99564"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH1001.BIN",
+    "profile": "SCPH1001",
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/rhapsody-a-musical-adventure-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "rhapsody-a-musical-adventure-*-windows-x64.zip",
+      "linux-x64": "rhapsody-a-musical-adventure-*-linux-x64.zip",
+      "macos-arm64": "rhapsody-a-musical-adventure-*-macos-arm64.zip",
+      "macos-x64": "rhapsody-a-musical-adventure-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "rhapsody_a_musical_adventure.exe",
+    "linux": "rhapsody_a_musical_adventure",
+    "macos": "rhapsody_a_musical_adventure"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/rhapsody-a-musical-adventure-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Rhapsody - A Musical Adventure"
+id = "SLUS-01073"
+players = 1
+exe = "disc/SLUS_010.73"
+disc = "disc/Rhapsody - A Musical Adventure (USA).cue"
+discs = ["disc/Rhapsody - A Musical Adventure (USA).cue"]
+disc_serials = ["SLUS-01073"]
+load_address = "0x80010000"
+entry_pc = "0x80011568"
+text_size = "0x0003C000"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Rhapsody - A Musical Adventure (USA) (Track 1).bin"
+cue_name = "Rhapsody - A Musical Adventure (USA).cue"
+boot_exe = "SLUS_010.73"
+known_sizes = [404534592]
+known_md5 = [
+  "ddfbcf4b9006d09dc0413e1c3a2356eb",
+]
+known_sha1 = [
+  "41fd8e464ca518e45b2cf5daecb6d4a3f7a77200",
+]
+known_crc32 = [
+  "17f052bd",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH1001.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Rhapsody - A Musical Adventure Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 2
+required_disc_fp = "4c55cab7f710c285fd1030047684d33e607467886db7b042a93ad8efefc99564"
